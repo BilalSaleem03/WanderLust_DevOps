@@ -1,0 +1,39 @@
+  GNU nano 7.2                                                                                   docker-compose.yaml
+services:
+  backend:
+    build: .
+    image: wanderlust-app:v2
+    container_name: wanderlust-backend
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      MONGO_URI: mongodb://admin:admin123@mongo:27017/wanderlust?authSource=admin
+    depends_on:
+      mongo
+    restart: always
+    networks:
+      - wanderlust-network
+
+  mongo:
+    image: mongo:7
+    container_name: wanderlust-mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+      MONGO_INITDB_DATABASE: wanderlust
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    restart: always
+    networks:
+      - wanderlust-network
+
+networks:
+  wanderlust-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
