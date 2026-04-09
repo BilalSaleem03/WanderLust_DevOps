@@ -19,8 +19,8 @@ const listingsRouter = require("./routes/listing.js")
 const reviewsRouter = require("./routes/review.js")
 const userRouter = require("./routes/user.js")
 const Listing = require("./models/listing.js")
-const dbURL= process.env.ATLASDB_URL;    //mongoDb Atlas URl that connects us with cloud Database
-const localDbURL = "mongodb://localhost:27017/WanderLust";  // This URL is to connect With local mongoDB Database...
+const dbURL= process.env.MONGO_URI;    //mongoDb Atlas URl that connects us with cloud Database
+
 
 //Middlewares.........
 app.locals.success = [];
@@ -57,7 +57,6 @@ app.use(express.static(path.join(__dirname , "public")));    //This middleware s
 //Here in Mongo Store which is a Session Storage for production level code.....
 const store = MongoStore.create({
     mongoUrl : dbURL,
-    // mongoUrl : localDbURL,
     crypto:{
         secret : process.env.SECRET,
     },
