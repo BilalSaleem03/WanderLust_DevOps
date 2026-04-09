@@ -1,31 +1,31 @@
 services:
   backend:
     build: .
-    image: wanderlust-app:v2
-    container_name: wanderlust-backend
+    image: wanderlust-devops:v1
+    container_name: wanderlust-devops-backend
     ports:
-      - "3000:3000"
+      - "3001:3001"
     env_file:
       - .env
     environment:
       MONGO_URI: mongodb://admin:admin123@mongo:27017/wanderlust?authSource=admin
     depends_on:
-      mongo
+      - mongo
     restart: always
     networks:
       - wanderlust-network
 
   mongo:
     image: mongo:7
-    container_name: wanderlust-mongo
+    container_name: wanderlust-devops-mongo
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin123
-      MONGO_INITDB_DATABASE: wanderlust
+      MONGO_INITDB_DATABASE: wanderlust-devops
     ports:
-      - "27017:27017"
+      - "27018:27017"
     volumes:
-      - mongo-data:/data/db
+      - mongo-data-devops:/data/db
     restart: always
     networks:
       - wanderlust-network
@@ -35,4 +35,4 @@ networks:
     driver: bridge
 
 volumes:
-  mongo-data:
+  mongo-data-devops:
