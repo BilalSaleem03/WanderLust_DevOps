@@ -166,6 +166,6 @@ app.use((err , re , res , next)=>{
 
 
 //Server runner
-app.listen("8080" , ()=>{
+app.listen(3001, "0.0.0.0", ()=>{
     console.log("Server is Running.....")
 })
