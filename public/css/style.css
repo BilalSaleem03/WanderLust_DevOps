@@ -1,0 +1,345 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* width: 100%; */
+    /* position: relative; */
+}
+.main-container{
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+
+}
+.navbar{
+    height : 5rem;
+    width: 100vw;
+    background-color: white;
+}
+.navbar-brand{
+    font-size: 2.5vw;
+    color: rgb(211, 53, 53)
+}
+.navbar-collapse{
+    background-color: white;
+}
+
+/* footer Style */
+.footer{
+    background-color: rgb(235, 241, 241);
+    display: flex;
+    height: 10vh;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 1vh;
+    margin-top: 15vh;
+    
+}
+.footer .f-info-links .link{
+    text-decoration: none;
+    color: black;
+}
+.footer .f-info-links .link:hover{
+    text-decoration: underline;
+}
+
+/* card styling */
+
+.listing-link{
+    text-decoration: none;
+    width: 23rem;
+    margin-top: 2rem;
+}
+
+.card{
+    border: none;
+    width: 100%;
+    
+}
+.card img{
+    height: 20rem;
+}
+.card .card-img-top{
+    border-radius: 2vh;
+    width: 100%;
+    object-fit: cover;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+.card .card-body{
+    padding: 0px;
+}
+.card .card-text{
+    font-weight: 400;
+}
+
+/* new page */
+.new-btn{
+    background-color: rgb(211, 53, 53);
+    border: none;
+}
+
+/* edit page */
+.edit-btn{
+    background-color: rgb(211, 53, 53);
+    border: none;
+}
+
+/* show page */
+
+.show-card-outer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.show-card-inner{
+    width: 50vw;
+
+}
+.show-card-inner .image img{
+    width: 49vw;
+    border-radius: 1vw;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.show-card-text{
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 3vh; */
+}
+.show-card-text div{
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+.show-btns{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1vh;
+    width: 100%;
+    height: 4vh;
+    flex-wrap: wrap;
+    gap: 1rem;
+    /* border: 2px solid rgb(211, 53, 53); */
+}
+.show-edit-btn-outer , .show-delete-btn-outer{
+    width: 15%;
+    height: 100%;
+    /* border: 2px solid rgb(211, 53, 53); */
+    min-height: 40px;
+    min-width: 60px;
+}
+
+.show-edit-btn{
+    background-color:  rgb(211, 53, 53);
+    width: 100%;
+    height: 100%;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+
+    
+}
+.show-delete-btn{
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+}
+.reviews-display{
+    width: 50vw;
+    max-height: 50vh;
+    overflow-x: scroll;
+    padding-bottom: 2vh;
+
+    display: flex;
+    flex-wrap: wrap;
+    
+    gap: 1vh;
+   
+    
+}
+.review{
+    width: 50vw;
+    height: 30vh;
+}
+.review form{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    height: 100%;
+    width: 100%;
+    /* margin-bottom: 5vh; */
+}
+
+.review form #comment{
+    padding: 2%;
+}
+.review form #review-submit-btn{
+    background-color: rgb(121, 222, 133);
+    color: white;
+    width: 16%;
+    height: 3vh;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    min-height: 40px;
+    min-width: 60px;
+}
+.show-reviews-card{
+    border: 2px solid rgb(193, 157, 157);
+    width: 48%;
+    height: 10vh;
+    position: relative;
+
+}
+
+.review-delete-btn{
+    border-radius: 8%;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    
+}
+.map-display{
+    width: 50vw;
+    margin-top: 3vh;
+    text-align: center;
+}
+#map{
+    height: 50vh;
+    width: 100%;
+    /* border: 3px solid black; */
+}
+
+
+@media screen and (max-width: 768px) {
+    .show-card-inner{
+        width: 90vw;
+    
+    }
+    .show-card-inner .image img{
+        width: 89vw;
+    }
+    .reviews-display{
+        width: 90vw;
+    }
+    .review{
+        width: 90vw;
+    }
+    .map-display{
+        width: 90vw;
+    }
+}
+@media  screen and (max-width:900px) {
+    .show-reviews-card{
+        width: 97%;
+    }
+}
+
+/* index page */
+.filters{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem 1rem 0rem 1rem;
+}
+.filter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.7;
+    padding: 0.5rem;
+    height: 12vh;
+    width: 13vw;
+    max-height: 60px;
+    max-width: 80px;
+    min-height: 65x;
+    min-width: 75px;
+    
+}
+.filter:hover{
+    opacity: 1.9;
+    cursor: pointer;
+}
+
+.filter p{
+    font-size: 80%;
+}
+.tax-info{
+    display:none;
+}
+.form-switch{
+    border: 1px solid black;
+    border-radius: 1rem;
+    height: 6vh;
+    width: 14vw;
+    min-height: 60px;
+    min-width: 150px;
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+    
+
+}
+@media screen and (max-width:500px) {
+    .form-switch{
+        /* justify-content:space-between; */
+        width: 35vw;
+        /* padding: 0px 1rem 0px 1rem; */
+
+
+    }
+}
+.form-check-label{
+    font-size: 80%;
+
+}
+
+.listing-display{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* nav-bar search */
+.search-btn{
+    border-radius: 3rem;
+}
+.search-space{
+border-radius: 3rem;
+padding: 0.5rem 2rem 0.5rem 2rem;
+}
+
+#comment{
+    border-radius: 1rem;
+}
+
+
+
+
+
+
+
